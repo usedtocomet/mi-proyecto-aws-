@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "input_bucket" {
 resource "aws_sqs_queue" "process_queue" {
   name                      = "document-process-queue"
   message_retention_seconds = 86400
-  visibility_timeout_seconds = 60 # Debe ser mayor que el timeout de la Lambda
+  visibility_timeout_seconds = 30 # Debe ser mayor que el timeout de la Lambda
 }
 
 # Política para permitir que S3 envíe mensajes a SQS
